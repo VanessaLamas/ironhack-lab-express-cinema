@@ -1,0 +1,43 @@
+<style>
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<div class="container bootdey">
+    <div class="col-md-12">
+        <section class="panel d-flex  flex-container">
+            <div class="panel-body">
+                <div class="col-md-6">
+                    <div class="pro-img-details m-4">
+                        <img src="{{ data.image }}" alt="" width="300px" height="500px">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4 class="pro-d-title">
+                    <h1 class="m-3"> {{ data.title }} </h1>
+                    <h4 class="m-3"> Director: {{ data.director }} </h4>
+                    <div class="product_meta">
+                        <h4 class="m-3">Stars:</h4>
+                        <ul class="m-3">
+                            {{#each data.stars }}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                        <p class="m-3">{{ data.description }}</p>
+                        <p class="m-3">
+                            {{#each data.showtimes }}
+                            <a>{{this}} |</a>
+                            {{/each}}
+                        </p>
+                        <div class="btn-group m-3">
+                            <a href="/movies" class="btn btn-sm btn-outline-secondary">Go back</a>
+                        </div>
+                    </div>
+            </div>
+        </section>
+    </div>
+</div>
